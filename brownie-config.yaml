@@ -1,0 +1,21 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.5.0
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.5.0'
+dotenv: .env
+networks:
+  default: development
+  goerli:
+    eth_usd_price_feed: ${ETH_USD_GOERLI_PRICE_FEED}
+    verify: True
+  mainnet-fork:
+    eth_usd_price_feed: ${ETH_USD_PRICE_FEED}
+    verify: false
+  development:
+    verify: false
+  ganache-local:
+    verify: false
+wallets:
+  from_key: ${PRIVATE_KEY}
